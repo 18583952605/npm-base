@@ -1,0 +1,12 @@
+{
+  "name": "wzy-base",
+  "version": "1.0.0",
+  "description": "一些常用的js和css",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "wzy1993",
+  "license": "ISC"
+}

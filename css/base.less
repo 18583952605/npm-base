@@ -1,0 +1,370 @@
+/* 原子类 */
+
+// font-weight
+.fwb {
+  font-weight: bold;
+}
+
+.fwn {
+  font-weight: normal;
+}
+
+// line-height
+.lh100 {
+  line-height: 100%;
+}
+
+.lh130 {
+  line-height: 130%;
+}
+
+.lh150 {
+  line-height: 150%;
+}
+
+.lh180 {
+  line-height: 180%;
+}
+
+.lh200 {
+  line-height: 200%;
+}
+
+.lh250 {
+  line-height: 250%;
+}
+
+.lh300 {
+  line-height: 300%;
+}
+
+// text-*
+.ti2 {
+  text-indent: 2em;
+}
+
+.tdu {
+  text-decoration: underline;
+}
+
+.tdn {
+  text-decoration: none;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+// vertical-align
+.vam {
+  vertical-align: middle;
+}
+
+// position
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.pf {
+  position: fixed;
+}
+
+.ps {
+  position: sticky;
+}
+
+.pa-right {
+  position: absolute;
+  right: 0;
+}
+
+// visibility: hidden
+.hidden {
+  visibility: hidden;
+}
+
+// display: none
+.none {
+  display: none;
+}
+
+// flexBox
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexJcC {
+  justify-content: center;
+}
+
+.flexJcFe {
+  justify-content: flex-end;
+}
+
+.flexJcSa {
+  justify-content: space-around;
+}
+
+.flexJcSb {
+  justify-content: space-between;
+}
+
+.flexAiFs {
+  align-items: flex-start;
+}
+
+.flexAiC {
+  align-items: center;
+}
+
+.flexAiFe {
+  align-items: flex-end;
+}
+
+.flexAcC {
+  align-content: center;
+}
+
+.flexAcSa {
+  align-content: space-around;
+}
+
+.flexAcSb {
+  align-content: space-between;
+}
+
+.flexRowJcC {
+  .flexRow();
+  .flexJcC();
+}
+
+.flexRowJcSb {
+  .flexRow();
+  .flexJcSb();
+}
+
+.flexRowAiC {
+  .flexRow();
+  .flexAiC();
+}
+
+.flexRowJcCAiC {
+  .flexRow();
+  .flexJcC();
+  .flexAiC();
+}
+
+.flexRowJcSbAiC {
+  .flexRow();
+  .flexJcSb();
+  .flexAiC();
+}
+
+.flexColJcC {
+  .flexCol();
+  .flexJcC();
+}
+
+.flexColJcSb {
+  .flexCol();
+  .flexJcSb();
+}
+
+.flexColAiC {
+  .flexCol();
+  .flexAiC();
+}
+
+.flexColJcCAiC {
+  .flexCol();
+  .flexJcC();
+  .flexAiC();
+}
+
+.flexColJcSbAiC {
+  .flexCol();
+  .flexJcSb();
+  .flexAiC();
+}
+
+.flexWrap {
+  flex-wrap: wrap;
+}
+
+.flexNoWrap {
+  flex-wrap: nowrap;
+}
+
+@lengths: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100; //, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000;
+
+// flex1
+.flex (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .flex@{test} {
+    flex: @test;
+  }
+  .flex(@index+1);
+}
+
+.flex(1);
+
+// font-size
+.fs (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .fs@{test} {
+    font-size: @test px;
+  }
+  .fs(@index+1);
+}
+
+.fs(1);
+
+// width
+.w (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .w@{test} {
+    width: @test px;
+  }
+  .w(@index+1);
+}
+
+.w(1);
+
+// height
+.h (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .h@{test} {
+    height: @test px;
+  }
+  .h(@index+1);
+}
+
+.h(1);
+
+// margin
+.m (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .m@{test} {
+    margin: @test px;
+  }
+  .m(@index+1);
+}
+
+.m(1);
+
+// margin-top
+.mt (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .mt@{test} {
+    margin-top: @test px;
+  }
+  .mt(@index+1);
+}
+
+.mt(1);
+
+// margin-right
+.mr (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .mr@{test} {
+    margin-right: @test px;
+  }
+  .mr(@index+1);
+}
+
+.mr(1);
+
+// margin-bottom
+.mb (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .mb@{test} {
+    margin-bottom: @test px;
+  }
+  .mb(@index+1);
+}
+
+.mb(1);
+
+// margin-left
+.ml (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .ml@{test} {
+    margin-left: @test px;
+  }
+  .ml(@index+1);
+}
+
+.ml(1);
+
+// padding
+.p (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .p@{test} {
+    padding: @test px;
+  }
+  .p(@index+1);
+}
+
+.p(1);
+
+// padding-top
+.pt (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .pt@{test} {
+    padding-top: @test px;
+  }
+  .pt(@index+1);
+}
+
+.pt(1);
+
+// padding-right
+.pr (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .pr@{test} {
+    padding-right: @test px;
+  }
+  .pr(@index+1);
+}
+
+.pr(1);
+
+// padding-bottom
+.pb (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .pb@{test} {
+    padding-bottom: @test px;
+  }
+  .pb(@index+1);
+}
+
+.pb(1);
+
+// padding-left
+.pl (@index) when (@index <= length(@lengths)) {
+  @test: extract(@lengths, @index);
+  .pl@{test} {
+    padding-left: @test px;
+  }
+  .pl(@index+1);
+}
+
+.pl(1);

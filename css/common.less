@@ -1,0 +1,74 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+// 位置
+.top {
+  position: absolute;
+  top: 0;
+
+  &.fixed {
+    position: fixed;
+  }
+
+  &.sticky {
+    position: sticky;
+  }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+
+  &.fixed {
+    position: fixed;
+  }
+
+  &.sticky {
+    position: sticky;
+  }
+}
+
+// 阴影
+.shadow-top {
+  box-shadow: 0 -3px 18px 0 rgba(50, 50, 50, 0.15);
+}
+
+// 文字
+.text-ell-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ell-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.text-ell-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+// 形状
+.sjx {
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  display: none;
+}
+
+// 后续补充
+// 占满-宽|高|全部
+// 阴影-上|下|左|右
+// 位置-
+// 形状-
+// 网上找其它常用的
