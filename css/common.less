@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -16,6 +17,12 @@ body {
   }
 }
 
+.top_sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
 .bottom {
   position: absolute;
   bottom: 0;
@@ -30,7 +37,7 @@ body {
 }
 
 // 阴影
-.shadow-top {
+.shadow_top {
   box-shadow: 0 -3px 18px 0 rgba(50, 50, 50, 0.15);
 }
 
