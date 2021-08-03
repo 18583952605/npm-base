@@ -7,20 +7,20 @@ const del = {
 
 const get = {
   // 数组 - 根据指定字段，找数组中的某一个对象，第四个参数用作直接返回该对象的指定属性，第五个参数作为找不到对象或该属性时的默认值
-  getItemFromArr(objArr, key, value, filed, defaultValue) {
-    
+  getItem(objArr, key, value, filed, defaultValue) {
+
     let res = objArr.find(item => item[key] === value)
-    
+
     if (res && filed) {
       res = res[filed]
     }
-    
+
     if (!res && defaultValue !== undefined) {
       res = defaultValue
     }
-    
+
     return res
-    
+
   },
 }
 

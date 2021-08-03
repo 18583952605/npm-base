@@ -1,9 +1,9 @@
 const watch = {
   observe(obj, key, watchFun) {
-    
+
     // 给该属性设默认值
     let val = obj[key]
-    
+
     Object.defineProperty(obj, key, {
       configurable: true,
       enumerable: true,
@@ -14,7 +14,7 @@ const watch = {
       },
       get() {
         return val
-      }
+      },
     })
   },
   setWatcher(data = {}, watch = {}) { // 接收index.js传过来的data对象和watch对象
@@ -26,21 +26,20 @@ const watch = {
 
 const get = {
   getCookies(name = '') {
-    
+
   },
   getQuery(url = location.href, name = '') {
-    
-  }
+
+  },
 }
 
 const find = {
   // 在数据里找指定字段
-  attr: (variable, attr, curPath) => {
-    
+  findAttr: (variable, attr, curPath) => {
     const getType = (variable) => {
       return Object.prototype.toString.call(variable).slice(8, -1)
     }
-    
+
     const isJson = (str) => {
       try {
         if (getType(JSON.parse(str)) === 'Object') {
@@ -50,12 +49,12 @@ const find = {
       }
       return false
     }
-    
+
     if (isJson(variable)) {
       variable = JSON.parse(variable)
       curPath += '.toString()'
     }
-    
+
     if (getType(variable) === 'Array') {
       for (let index = 0; index < variable.length; index++) {
         const res = findAttr(variable[index], attr, curPath + `[${index}]`)
@@ -64,12 +63,12 @@ const find = {
         }
       }
     }
-    
+
     if (getType(variable) === 'Object') {
       if (variable[attr] !== undefined) {
         return curPath + '.' + attr
       }
-      
+
       for (let key in variable) {
         const res = findAttr(variable[key], attr, curPath + `.${key}`)
         if (res) {
@@ -77,8 +76,19 @@ const find = {
         }
       }
     }
-    
-  }
+  },
+}
+
+const filter = {
+  // 过滤对象中为undefined的属性
+  filterParams: (params) => {
+    return Object.entries(params || {}).reduce((obj, [key, value]) => {
+      if (value !== undefined) {
+        obj[key] = value
+      }
+      return obj
+    }, {})
+  },
 }
 
 export default {

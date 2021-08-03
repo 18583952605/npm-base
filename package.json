@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "wzy1993",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@antv/x6": "^1.25.1",
+    "ahooks": "^2.10.9",
+    "antd": "^4.16.10",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "react-json-view": "^1.21.3"
+  }
 }

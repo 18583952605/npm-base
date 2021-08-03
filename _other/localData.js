@@ -27,16 +27,6 @@ const findItem = (name, id) => {
 export default (name) => {
   return () => ({
     get() {
-      // 特殊处理下
-      if (name === 'plan') {
-        return _getItem('plan', []).map((item) => ({
-          ...item,
-          lottery: findItem('lottery', item._lottery) || {},
-          algorithm: (item._algorithm || [])
-          .map((_item) => findItem('algorithm', _item))
-          .filter((item) => item),
-        }))
-      }
       return _getItem(name, [])
     },
     delete(index) {

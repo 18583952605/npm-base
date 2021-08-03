@@ -1,5 +1,3 @@
-TextSelect
-
 import React, {PureComponent} from 'react'
 
 function getSelectedText() {

@@ -5,7 +5,7 @@ import {Checkbox, DatePicker, Form, Input, Radio, Select, Slider, Switch} from '
 import _ from 'lodash'
 import moment from 'moment'
 import {useDebounceFn} from 'ahooks'
-import {getType, setUrlParams} from '../../utils/tools'
+import {getType, setUrlParams} from '../../js'
 
 // 支持动态显示表单字段的组件
 // 支持将指定字段同步到地址栏

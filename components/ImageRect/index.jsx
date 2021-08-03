@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {Image} from 'antd'
-import {url2Params} from '../../utils/tools'
+import {url2Params} from '../../js'
 
 // 在图片上，根据坐标，画矩形
 export default () => {

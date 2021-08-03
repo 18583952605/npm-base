@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import {InputNumber} from 'antd'
 import _ from 'lodash'
-import styles from '../../styles/index.less'
+import styles from '../../css/index.less'
 
 export default (props) => {
-
   const {value = [], min, max, onChange} = props
 
   const [number, setNumber] = useState(value)

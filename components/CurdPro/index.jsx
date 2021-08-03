@@ -4,7 +4,7 @@ import {Button, Card, Drawer, Space} from 'antd'
 import Table from './blocks/Table'
 import AddEdit from './blocks/AddEdit'
 
-import localDataFn from '../../utils/LocalData'
+import localDataFn from '../../_other/localData'
 
 export default (props) => {
   const {name = '', keyIndex = '', columns = [], fields = [], isShowExpandable = false} = props

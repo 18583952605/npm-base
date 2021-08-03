@@ -1,8 +1,6 @@
-Talk
-
 import React, {PureComponent} from 'react'
 import {Button, List} from 'antd'
-import TextSelect from '../TextAnnotate/TextSelect'
+import TextSelect from '../TextSelect'
 
 export default class Talk extends PureComponent {
 

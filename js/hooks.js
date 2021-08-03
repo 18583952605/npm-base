@@ -1,16 +1,16 @@
 import {useCallback, useEffect, useState} from 'react'
 
-// 进入该页面不显示footer
-export const useHideFooter = () => {
+// 进入时隐藏指定元素，销毁时恢复该元素
+const useHideFooter = (el = '.ant-layout-footer') => {
   useEffect(() => {
-    const footer = document.querySelector('.ant-layout-footer')
-    footer.style.display = 'none'
-    return () => footer.style.display = 'block'
+    const e = document.querySelector(el)
+    e.style.display = 'none'
+    return () => e.style.display = 'block'
   }, [])
 }
 
-// visible和type的集合体
-export const useVisibleInfo = (v = false, i) => {
+// visible和info的集合体
+const useVisibleInfo = (v = false, i) => {
   const [visible, setVisible] = useState(v)
   const [info, setInfo] = useState(i)
   return [
@@ -28,8 +28,7 @@ export const useVisibleInfo = (v = false, i) => {
 }
 
 // 判断某元素滚动时，指定元素是否显示
-export const useElementScrollVisible = (scroll, target) => {
-
+const useElementScrollVisible = (scroll, target) => {
   const $scroll = document.querySelector(scroll) || {}
   const $scrollRect = $scroll.getBoundingClientRect()
 
@@ -72,7 +71,14 @@ export const useElementScrollVisible = (scroll, target) => {
 }
 
 // 强制刷新
-export const useUpdate = () => {
+const useUpdate = () => {
   const [_, setState] = useState(0)
   return useCallback(() => setState(num => num + 1), [])
+}
+
+export default {
+  useHideFooter,
+  useVisibleInfo,
+  useElementScrollVisible,
+  useUpdate,
 }

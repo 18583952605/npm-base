@@ -7,7 +7,7 @@ import BaseNode from './nodes/Base'
 import ParentNode from './nodes/Parent'
 import BaseEdge from './edge/Base'
 
-import {debounce} from '@/utils/tools'
+import {debounce} from '../../js'
 import defaultConfig from './defaultConfig'
 
 export default class extends Component {
